@@ -1,0 +1,183 @@
+.header {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 40px;
+    color: rgb(0, 0, 0);
+    padding-top: 20px;
+}
+
+.header h1 {
+    font-size: 2.5em;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+/* Pricing Table Container */
+.pricing-table {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    width: 100%;
+}
+
+/* Individual Pricing Card */
+.pricing-card {
+    background-color: #2e2e2e;
+    color: white;
+    border-radius: 10px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    flex: 1;
+    min-width: 280px;
+    max-width: 350px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Plan Colors */
+.pricing-card.bronze {
+    background: linear-gradient(135deg, #cd7f32 0%, #b66e2e 100%);
+    box-shadow: 0 10px 20px rgba(205, 127, 50, 0.5);
+}
+
+.pricing-card.silver {
+    background: linear-gradient(135deg, #c0c0c0 0%, #a9a9a9 100%);
+    color: #222;
+    box-shadow: 0 10px 20px rgba(192, 192, 192, 0.5);
+}
+
+.pricing-card.gold {
+    background: linear-gradient(135deg, #ffd700 0%, #e6c200 100%);
+    color: #222;
+    box-shadow: 0 10px 20px rgba(255, 215, 0, 0.6);
+}
+
+/* Plan Titles */
+.pricing-card h2 {
+    font-size: 1.8em;
+    margin-top: 0;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+}
+
+/* Subtitle color override for silver and gold */
+.pricing-card.silver .subtitle,
+.pricing-card.gold .subtitle {
+    color: #444;
+}
+
+.pricing-card .subtitle {
+    font-size: 0.9em;
+    color: #bbb;
+    margin-bottom: 20px;
+}
+
+/* Price Display */
+.pricing-card .price {
+    font-size: 3.5em;
+    font-weight: bold;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pricing-card.bronze .price {
+    color: #fff8f0;
+}
+
+.pricing-card.silver .price,
+.pricing-card.gold .price {
+    color: #333;
+}
+
+.pricing-card .price .currency {
+    font-size: 0.6em;
+    align-self: flex-start;
+    margin-right: 5px;
+}
+
+.pricing-card .payment-info {
+    font-size: 0.8em;
+    margin-bottom: 30px;
+}
+
+.pricing-card.bronze .payment-info {
+    color: #f3e5d5;
+}
+
+.pricing-card.silver .payment-info,
+.pricing-card.gold .payment-info {
+    color: #555;
+}
+
+/* Features List */
+.pricing-card .features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 30px 0;
+    text-align: left;
+    width: 100%;
+}
+
+.pricing-card .features li {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    font-size: 0.95em;
+    color: inherit;
+    /* inherits color based on plan */
+}
+
+.pricing-card .features li:last-child {
+    margin-bottom: 0;
+}
+
+.pricing-card .features .check-icon {
+    color: #4CAF50;
+    margin-right: 10px;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+/* Register Button */
+.register-button {
+    background-color: #6a6a6a;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+    width: 80%;
+    margin-top: auto;
+}
+
+.register-button:hover {
+    background-color: #888888;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .pricing-table {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .pricing-card {
+        margin-bottom: 20px;
+        max-width: 90%;
+        min-width: unset;
+        width: 100%;
+    }
+}
+

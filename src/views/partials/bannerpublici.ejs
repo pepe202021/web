@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carrusel Mejorado</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/bannerpublici.css">
+</head>
+
+<body>
+
+  <div id="miCarruselPublicitario" class="carousel slide" data-ride="carousel">
+
+    <!-- Imágenes del carrusel -->
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="<%= data[0][20] %>" class="d-block w-100" alt="Descripción de la primera imagen">
+      </div>
+      <div class="carousel-item">
+        <img src="<%= data[0][21] %>" class="d-block w-100" alt="Descripción de la segunda imagen">
+      </div>
+      <div class="carousel-item">
+        <img src="<%= data[0][22] %>" class="d-block w-100" alt="Descripción de la tercera imagen">
+      </div>
+    </div>
+
+    <!-- Controles -->
+    <a class="carousel-control-prev" href="#miCarruselPublicitario" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Anterior</span>
+    </a>
+    <a class="carousel-control-next" href="#miCarruselPublicitario" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Siguiente</span>
+    </a>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,103 @@
+body {
+  margin: 0;
+}
+/* Contenedor general de las tarjetas */
+.tarjeta-contenedor {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Estilo de cada tarjeta */
+.tarjeta {
+  width: 300px;
+  height: 450px; /* Altura fija para uniformidad */
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Imagen de la tarjeta */
+.tarjeta-imagen {
+  margin-top: 20px;
+  width: 100%;
+  object-fit: cover; /* Recorta la imagen para que encaje sin deformarse */
+}
+
+/* Contenido de la tarjeta */
+.tarjeta-contenido {
+  flex: 1; /* Ocupa el espacio restante */
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Título de la tarjeta */
+.tarjeta-titulo {
+  margin: 0;
+  font-size: 20px;
+}
+
+.tarjeta-descripcion {
+  font-size: 14px;
+  color: #555;
+  flex-grow: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+  /* Permite el salto de línea */
+  display: -webkit-box;
+  /* Para usar -webkit-line-clamp */
+  -webkit-box-orient: vertical;
+  /* Establece la orientación de la caja */
+  -webkit-line-clamp: 2;
+  /* Permite mostrar hasta 2 líneas antes de recortar */
+  width: 250px;
+  /* Ajustar el ancho o max-width */
+}
+
+/* Botón de la tarjeta */
+.tarjeta-boton {
+  display: inline-block;
+  margin-top: 10px;
+  text-decoration: none;
+  color: #fff;
+  background-color: #007BFF;
+  padding: 8px 12px;
+  border-radius: 4px;
+  text-align: center;
+}
+
+/* Botón con color alternativo */
+.btn2 {
+  background-color: #2d960a;
+}
+
+/* Botón "Ver más" */
+.ver-mas-boton {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007BFF;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.ver-mas-boton:hover {
+  background-color: #0056b3;
+}
+
+/* Clase oculta */
+.oculta {
+  display: none;
+}

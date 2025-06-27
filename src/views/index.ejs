@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%= title %>
+    </title>
+    <%- include('partials/banner1') %>
+        <%- include('partials/head') %>
+
+            <!-- Estilos adicionales para la transición -->
+            <style>
+                /* Contenedor del video de fondo */
+                .video-background {
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    z-index: 999;
+                    object-fit: cover;
+                }
+
+                /* El video ocupa toda la pantalla */
+                video {
+                    object-fit: cover;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                }
+
+                /* Después de que la transición termine, el video se oculta */
+                .video-background.hidden {
+                    opacity: 0;
+                    visibility: hidden;
+                }
+
+                /* Media query para pantallas pequeñas */
+                @media (max-width: 768px) {
+                    .video-background {
+                        object-fit: contain;
+                        /* Cambiar el ajuste para pantallas pequeñas */
+                    }
+
+                    video {
+                        width: 100%;
+                    }
+                }
+            </style>
+</head>
+
+<body>
+    <!-- Video de fondo durante la transición -->
+    <div class="video-background" id="video-background">
+        <video autoplay muted loop>
+            <source src="/img/b3.mp4" type="video/mp4">
+            Tu navegador no soporta el video.
+        </video>
+    </div>
+
+    <!-- Contenido de la página -->
+    <%- include('partials/datos', { data: data }) %>
+        <%- include('partials/bannerpublici') %>
+            <%- include('partials/video') %>
+                <%- include('partials/banner4img') %>
+                    <%- include('partials/footer') %>
+
+                        <!-- Script para manejar la transición -->
+                        <script>
+                            window.addEventListener('load', function () {
+                                document.body.classList.add('loaded');
+
+                                const videoBackground = document.getElementById('video-background');
+
+                                // Ocultar video después de 6 segundos 14000
+                                setTimeout(() => {
+                                    videoBackground.classList.add('hidden');
+                                }, 14000);
+                            });
+                        </script>
+</body>
+
+</html>

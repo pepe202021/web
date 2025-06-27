@@ -1,0 +1,56 @@
+<link rel="stylesheet" href="/css/mainreciente.css">
+<div class="tarjeta-contenedor">
+    <!-- aca se cambia el numero de cajs de perfil al inicio  -->
+    <% data.slice(0, 8).forEach(function(row) { %>
+        <div class="tarjeta">
+            <img src="<%= row[5] %>" alt="Imagen de <%= row[1] %>" class="tarjeta-imagen">
+            <div class="tarjeta-contenido">
+                <h2 class="tarjeta-titulo">
+                    <%= row[1] %>
+                </h2>
+                <p class="tarjeta-descripcion">
+                    <strong>Teléfono:</strong>
+                    <%= row[2] %><br>
+                        <strong>Dirección:</strong>
+                        <%= row[3] %><br>
+                        <strong>Categoria:</strong>
+                        <%= row[6] %> <br>
+                            <strong>Informacion:</strong>
+                            <%= row[4] %>
+                           
+                </p>
+                <% let numeroLimpio=row[2].replace(/\D/g, '' ); let numeroWhatsApp=numeroLimpio.startsWith('57') ? numeroLimpio : '57' +
+                    numeroLimpio; %>
+                
+                    <a href="https://wa.me/<%= numeroWhatsApp %>?text=Hola%20vi%20tu%20perfil%20en%20mi%20sitio" target="_blank"
+                        class="tarjeta-boton btn2">
+                        Contactar por WhatsApp
+                    </a>
+                <a href="/perfil?id=<%= encodeURIComponent(row[0]) %>" class="tarjeta-boton">Ver perfil</a>
+            </div>
+        </div>
+        <% }); %>
+</div>
+
+
+<script>
+    const buttons = document.querySelectorAll('.btn2');
+
+    buttons.forEach(button => {
+        button.addEventListener('click', () => {
+            const id = button.getAttribute('data-id');
+            if (id) {
+                // Redirecciona a /head?id=valor
+                window.location.href = `/perfil?id=${encodeURIComponent(id)}`;
+            }
+        });
+    });
+</script>
+<% if (data.length> 8) { %>
+    <div style="text-align: center; margin-top: 20px;">
+        <a href="/datos" class="ver-mas-boton">Ver más</a>
+    </div>
+    <% } %>
+
+    
+ 

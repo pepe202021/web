@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>
+        <%= title %>
+    </title>
+    <%- include('partials/banner1') %>
+
+        <style>
+            main {
+                max-width: 900px;
+                margin: 50px auto;
+                background: white;
+                padding: 40px 30px;
+                border-radius: 10px;
+                box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            }
+
+            h1 {
+                text-align: center;
+                color: #4a90e2;
+                margin-bottom: 40px;
+                font-weight: 700;
+                font-size: 2.8rem;
+                letter-spacing: 1px;
+            }
+
+            section {
+                margin-bottom: 40px;
+            }
+
+            section:last-child {
+                margin-bottom: 0;
+            }
+
+            h2 {
+                color: #333;
+                font-size: 1.8rem;
+                margin-bottom: 15px;
+                border-bottom: 3px solid #4a90e2;
+                display: inline-block;
+                padding-bottom: 5px;
+            }
+
+            p {
+                font-size: 1.1rem;
+                color: #555;
+                white-space: pre-line;
+                /* Para respetar saltos de línea si los hay */
+            }
+
+            /* Responsive */
+            @media (max-width: 600px) {
+                main {
+                    padding: 25px 20px;
+                    margin: 30px auto;
+                }
+
+                h1 {
+                    font-size: 2.2rem;
+                }
+
+                h2 {
+                    font-size: 1.5rem;
+                }
+
+                p {
+                    font-size: 1rem;
+                }
+            }
+        </style>
+</head>
+
+<body>
+    <main>
+        <h1>Coffee Laberinto</h1>
+
+        <section>
+            <h2>Misión</h2>
+            <p>
+                Coffeelaberinto es un centro comercial digital que se enfoca en ofrecer una experiencia de compra
+                innovadora y accesible para todos los usuarios.
+                Nos comprometemos a proporcionar productos y servicios de alta calidad, diseñados para satisfacer las
+                necesidades y expectativas de nuestros clientes.
+                Buscamos crear un entorno digital acogedor y fácil de navegar, donde los usuarios puedan encontrar lo
+                que buscan de manera rápida y segura.
+                Nuestro objetivo es ser un referente en el comercio electrónico, ofreciendo una experiencia de compra
+                única y satisfactoria para todos.
+            </p>
+        </section>
+
+        <section>
+            <h2>Visión</h2>
+            <p>
+                Ser el centro comercial digital líder en innovación y accesibilidad, reconocido por su compromiso con la
+                calidad y la satisfacción del cliente.
+                Buscamos ser un espacio donde los usuarios puedan encontrar productos y servicios que se adapten a sus
+                necesidades y preferencias, y puedan disfrutar de una experiencia de compra segura y satisfactoria.
+                Queremos ser un modelo de éxito en el comercio electrónico, inspirando a otros a seguir nuestro ejemplo
+                y contribuyendo al desarrollo de la comunidad digital.
+            </p>
+        </section>
+    </main>
+
+    <%- include('partials/footer') %>
+</body>
+
+</html>

@@ -1,0 +1,222 @@
+body {
+  margin: 0;
+}
+.navbar {
+  background-color: #333;
+  padding: 10px 20px;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.linea {
+  text-align: center;
+  background-color: rgb(136, 70, 8);
+  color: wheat;
+  width: auto;
+  height: 35px;
+}
+
+.navbar-logo {
+  box-shadow: 2px 2px 8px rgba(255, 255, 255, 0.4);
+  background-image: url(/img/a.jpeg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+
+}
+
+.navbar-menu {
+  margin-left: 50px;
+  display: flex;
+  list-style: none;
+  padding: 0px;
+}
+
+.navbar-menu li {
+  margin-right: 50px;
+}
+
+.navbar-menu a {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #001aff;
+  /* azul brillante */
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.navbar-menu a:hover {
+  background-color: white;
+  color: #001aff;
+}
+
+/* 🔍 Buscador */
+.search-form {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  background-color: #333333;
+  flex-wrap: wrap;
+  /* Para que se adapte en pantallas pequeñas */
+  gap: 5px;
+}
+
+.search-form select,
+.search-form input,
+.search-form button {
+  font-size: 16px;
+  height: 40px;
+  border: 2px solid #ccc;
+  width: 410px
+}
+
+.search-select {
+  padding: 0 10px;
+  border-radius: 5px 0 0 5px;
+  border-right: none;
+  outline: none;
+  background-color: white;
+}
+
+.search-form input {
+  padding: 0 120px;
+  width: 200px;
+  height: auto;
+  outline: none;
+}
+
+.search-form button {
+  padding: 0 16px;
+  background-color: #007bff;
+  color: white;
+  border-left: none;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  border-color: #007bff;
+}
+
+.search-form button:hover {
+  background-color: #0056b3;
+}
+
+/* Botón hamburguesa */
+.menu-toggle {
+  display: none;
+  font-size: 48px;
+  color: white;
+  cursor: pointer;
+  margin-left: auto;
+  /* Lo mueve a la derecha automáticamente */
+
+}
+
+.category-buttons {
+  margin-top: -15px;
+  background-color: #333;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  gap: 30px;
+  padding: 20px;
+  overflow-x: auto;
+  /* 👈 evita desborde si hay muchos */
+}
+
+.category-buttons button {
+  width: 50px;
+  height: 50px;
+  font-size: 30px;
+  border: none;
+  border-radius: 50%;
+  /* 🔵 hace el botón redondo */
+  background-color: #555;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.category-buttons button:hover {
+  background-color: #007bff;
+  transform: scale(1.1);
+  /* 🔍 efecto de agrandamiento */
+}
+
+
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+    font-size: 44px;
+    margin-right: 25px;
+  }
+
+  .navbar-logo {
+    margin-left: 0px;
+  }
+
+  .navbar-menu {
+    margin-left: 0px;
+    flex-direction: column;
+    position: absolute;
+    top: 90px;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.3s ease-out;
+  }
+
+  .navbar-menu.active {
+    max-height: 500px;
+    /* lo suficiente para mostrar todo el contenido */
+    transition: max-height 0.4s ease-in;
+  }
+
+  .navbar-menu li {
+    background-color: transparent;
+    margin: 0;
+    text-align: center;
+    border-bottom: 1px solid #444;
+  }
+
+  .navbar-menu li a {
+    width: 300px;
+    background-color: transparent;
+  }
+
+  .search-form {
+    flex-wrap: nowrap;
+  }
+
+  .search-form input {
+    padding: 0 0px;
+  }
+
+  .search-form select,
+  .search-form input,
+  .search-form button {
+    width: 210px
+  }
+  .category-buttons {
+ 
+    gap: 2px;
+    padding: 20px;
+   
+  }
+  
+  .category-buttons button {
+
+    font-size: 20px;
+  }
+  
+
+
+}

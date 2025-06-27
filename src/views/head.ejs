@@ -1,0 +1,37 @@
+<link rel="stylesheet" href="/css/mainreciente.css">
+<%- include('partials/banner1') %>
+    <%- include('partials/head') %>
+<div class="tarjeta-contenedor">
+    <% data.forEach(function(row) { %>
+        <div class="tarjeta">
+            <img src="<%= row[5] %>" alt="Imagen de <%= row[1] %>" class="tarjeta-imagen">
+            <div class="tarjeta-contenido">
+                <h2 class="tarjeta-titulo">
+                    <%= row[1] %>
+                </h2>
+                <p class="tarjeta-descripcion">
+                    <strong>Teléfono:</strong>
+                    <%= row[2] %><br>
+                        <strong>Dirección:</strong>
+                        <%= row[3] %><br>
+                        <strong>Categoria:</strong>
+                        <%= row[6] %> <br>
+                            <strong>Informacion:</strong>
+                            <%= row[4] %><br>
+                                
+                </p>
+                <% let numeroLimpio=row[2].replace(/\D/g, '' ); let numeroWhatsApp=numeroLimpio.startsWith('57') ? numeroLimpio : '57' +
+                    numeroLimpio; %>
+                
+                    <a href="https://wa.me/<%= numeroWhatsApp %>?text=Hola%20vi%20tu%20perfil%20en%20mi%20sitio" target="_blank"
+                        class="tarjeta-boton btn2">
+                        Contactar por WhatsApp
+                    </a>
+                
+                    <a href="/perfil?id=<%= encodeURIComponent(row[0]) %>" class="tarjeta-boton">Ver perfil</a>
+            </div>
+        </div>
+        <% }); %>
+</div>
+<%- include('partials/footer') %>
+

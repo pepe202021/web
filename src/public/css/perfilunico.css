@@ -1,0 +1,391 @@
+/* General Styles */
+body {
+    line-height: 1.6;
+    color: #333;
+    margin: 0;
+    background-color: #f4f7fa;
+    padding-bottom: 40px;
+}
+
+
+.profile-page {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+}
+
+.client-banner-container {
+    width: 100%;
+    overflow: hidden;
+    margin-top: 0;
+}
+
+.client-banner {
+    margin-top: 10px;
+    width: 100%;
+    object-fit: contain;
+    transition: transform 0.5s ease;
+}
+
+.client-banner:hover {
+    transform: scale(1.1);
+}
+
+.profile-container {
+    padding: 20px 10px;
+    display: flex;
+    gap: 30px;
+    position: relative;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+
+/* Profile Image */
+.profile-image-wrapper {
+    width: 280px;
+    height: 280px;
+    margin-left: 25px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid #e3e3e3;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+    background-image: url('<%= data && data.length > 0 && data.at(0) && data.at(0).at(5) %>');
+    background-size: 80%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.profile-image-wrapper:hover {
+    transform: scale(1.05);
+}
+
+/* Profile Details */
+.profile-details {
+    flex-grow: 1;
+    max-width: 600px;
+}
+
+.profile-details h1 {
+    font-size: 2.4em;
+    color: #391b93;
+    margin-top: 0;
+    margin-bottom: 15px;
+    border-bottom: 3px solid #ecf0f1;
+    padding-bottom: 10px;
+    text-transform: capitalize;
+}
+
+/* Título de cada sección */
+.profile-details p {
+    margin-bottom: 12px;
+    font-size: 1.1em;
+    flex-direction: column;
+    align-items: flex-start;
+    /* Alinea todo al lado izquierdo */
+    gap: 5px;
+    /* Espaciado entre el título y el texto */
+}
+
+.profile-details p .title {
+    font-size: 1.3em;
+    /* Hacemos el título más grande */
+    font-weight: bold;
+    color: #2c3e50;
+    text-transform: uppercase;
+    /* Títulos en mayúsculas */
+    margin-bottom: 5px;
+    /* Añade un poco de espacio debajo del título */
+}
+
+.profile-details p .text {
+    font-size: 1.1em;
+    color: #7f8c8d;
+}
+
+.profile-details p i {
+    color: #2980b9;
+    font-size: 1.3em;
+    /* Iconos un poco más grandes */
+}
+
+/* No Profile Message */
+.no-profile-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    color: #95a5a6;
+}
+
+.no-profile {
+    font-size: 1.2em;
+    color: #7f8c8d;
+}
+
+/* Hover effects for icons */
+.profile-details p i {
+    font-size: 1.2em;
+    transition: color 0.3s ease;
+}
+
+.profile-details p i:hover {
+    color: #16a085;
+}
+
+.dire {
+    width: 580px;
+    height: 450px;
+    /* Si quieres que el div ajuste su tamaño a iframe, pon: */
+    display: inline-block;
+    /* o block */
+}
+
+.map-frame {
+    width: 100%;
+    /* Ocupa todo el ancho del contenedor */
+    height: 100%;
+    /* Ocupa toda la altura del contenedor */
+    border: 0;
+    /* Sin borde */
+}
+.social-buttons {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    /* Centra horizontalmente */
+    align-items: center;
+    /* Centra verticalmente si hiciera falta */
+    flex-wrap: wrap;
+    /* Por si hay muchas redes, que hagan salto de línea */
+    gap: 10px;
+    /* Espacio entre botones */
+}
+
+.social-btn {
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    font-size: 24px;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    margin: 0 5px;
+    transition: background 0.3s ease;
+}
+
+.whatsapp {
+    background-color: #25D366;
+}
+
+.instagram {
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+}
+
+.facebook {
+    background-color: #3b5998;
+}
+
+.tiktok {
+    background-color: #000000;
+}
+
+.social-btn:hover {
+    opacity: 0.8;
+}
+
+/* Estilos generales para el contenedor del formulario */
+.profile-container {
+    margin: 40px auto;
+    /* Centra el contenedor y añade espacio arriba/abajo */
+    padding: 30px;
+    /* Espacio interno */
+    background-color: #ffffff;
+    /* Fondo blanco */
+    border-radius: 10px;
+    /* Esquinas redondeadas */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    /* Sombra suave */
+    font-family: 'Arial', sans-serif;
+    /* Fuente legible */
+    color: #333;
+    /* Color de texto general */
+}
+
+/* Título del formulario */
+.profile-container h2 {
+    text-align: center;
+    /* Centra el título */
+    color: #0056b3;
+    /* Color azul para el título */
+    margin-bottom: 25px;
+    /* Espacio debajo del título */
+    font-size: 2em;
+    /* Tamaño de fuente */
+}
+
+/* Estilos para el formulario en sí */
+#formCorreo {
+    display: flex;
+    /* Habilita flexbox */
+    flex-direction: column;
+    /* Organiza los elementos en columna */
+    gap: 15px;
+    /* Espacio entre los elementos del formulario */
+}
+
+/* Estilos para las etiquetas (labels) */
+#formCorreo label {
+    font-weight: bold;
+    /* Texto en negrita */
+    margin-bottom: 5px;
+    /* Pequeño espacio debajo de la etiqueta */
+    color: #555;
+    /* Color gris oscuro */
+}
+
+/* Estilos para los campos de entrada (inputs y textarea) */
+#formCorreo input[type="text"],
+#formCorreo input[type="email"],
+#formCorreo input[type="tel"],
+#formCorreo textarea {
+    width: 100%;
+    /* Ocupa todo el ancho disponible */
+    padding: 12px;
+    /* Relleno interno */
+    border: 1px solid #ccc;
+    /* Borde gris claro */
+    border-radius: 5px;
+    /* Esquinas ligeramente redondeadas */
+    font-size: 2em;
+    /* Tamaño de fuente */
+    box-sizing: border-box;
+    /* Incluye padding y border en el ancho total */
+    transition: border-color 0.3s ease;
+    /* Transición suave para el foco */
+}
+
+/* Estilo al enfocar los campos */
+#formCorreo input:focus,
+#formCorreo textarea:focus {
+    border-color: #007bff;
+    /* Borde azul al enfocar */
+    outline: none;
+    /* Elimina el contorno predeterminado del navegador */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.25);
+    /* Sombra suave al enfocar */
+}
+
+/* Estilos específicos para el área de texto */
+#formCorreo textarea {
+    resize: vertical;
+    /* Permite redimensionar verticalmente */
+    min-height: 120px;
+    /* Altura mínima */
+    max-height: 300px;
+    /* Altura máxima para evitar desbordamiento */
+}
+
+/* Estilos para el botón de enviar */
+#formCorreo button[type="submit"] {
+    background-color: #007bff;
+    /* Fondo azul */
+    color: white;
+    /* Texto blanco */
+    padding: 12px 20px;
+    /* Relleno */
+    border: none;
+    /* Sin borde */
+    border-radius: 5px;
+    /* Esquinas redondeadas */
+    cursor: pointer;
+    /* Cursor de mano al pasar por encima */
+    font-size: 1.1em;
+    /* Tamaño de fuente */
+    font-weight: bold;
+    /* Texto en negrita */
+    margin-top: 15px;
+    /* Espacio superior */
+    transition: background-color 0.3s ease;
+    /* Transición suave para el hover */
+}
+
+/* Estilo al pasar el ratón por encima del botón */
+#formCorreo button[type="submit"]:hover {
+    background-color: #0056b3;
+    /* Azul más oscuro al pasar el ratón */
+}
+
+
+/* Responsive Styles */
+@media (max-width: 900px) {
+    .profile-container {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .profile-image-wrapper {
+        width: 180px;
+        height: 180px;
+        margin-bottom: 20px;
+    }
+
+    .profile-details {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .profile-details p {
+        align-items: center;
+        display: flex;
+    }
+
+    .profile-details p i {
+        font-size: 1.4em;
+    }
+
+    .dire {
+        width: 320px;
+        height: 450px;
+    }
+}
+
+@media (max-width: 480px) {
+        #formCorreo button[type="submit"] {
+            padding: 10px 15px;
+            /* Botón más pequeño */
+            font-size: 1em;
+        }
+
+    .profile-image-wrapper {
+        width: 200px;
+        height: 200px;
+    }
+
+    .profile-details h1 {
+        font-size: 1.6em;
+    }
+
+    .profile-details p .title {
+        font-size: 1em;
+    }
+
+    .profile-details p .text {
+        font-size: 1em;
+    }
+
+    .dire {
+        width: 280px;
+        height: 450px;
+    }
+}

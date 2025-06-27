@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="/css/mainreciente.css">
+</head>
+<body>
+
+  <div class="tarjeta-grid">
+    <!-- Primeras 4 tarjetas visibles -->
+    <div class="tarjeta">
+      <img src="https://via.placeholder.com/300x150" alt="Imagen 1" class="tarjeta-imagen">
+      <div class="tarjeta-contenido">
+        <h2 class="tarjeta-titulo">Título 1</h2>
+        <p class="tarjeta-descripcion">Descripción de la tarjeta 1.</p>
+        <a href="#" class="tarjeta-boton">Leer más</a>
+      </div>
+    </div>
+
+    <div class="tarjeta">
+      <img src="https://via.placeholder.com/300x150" alt="Imagen 2" class="tarjeta-imagen">
+      <div class="tarjeta-contenido">
+        <h2 class="tarjeta-titulo">Título 2</h2>
+        <p class="tarjeta-descripcion">Descripción de la tarjeta 2.</p>
+        <a href="#" class="tarjeta-boton">Leer más</a>
+      </div>
+    </div>
+
+    <div class="tarjeta">
+      <img src="https://via.placeholder.com/300x150" alt="Imagen 3" class="tarjeta-imagen">
+      <div class="tarjeta-contenido">
+        <h2 class="tarjeta-titulo">Título 3</h2>
+        <p class="tarjeta-descripcion">Descripción de la tarjeta 3.</p>
+        <a href="#" class="tarjeta-boton">Leer más</a>
+      </div>
+    </div>
+
+    <div class="tarjeta">
+      <img src="https://via.placeholder.com/300x150" alt="Imagen 4" class="tarjeta-imagen">
+      <div class="tarjeta-contenido">
+        <h2 class="tarjeta-titulo">Título 4</h2>
+        <p class="tarjeta-descripcion">Descripción de la tarjeta 4.</p>
+        <a href="#" class="tarjeta-boton">Leer más</a>
+      </div>
+    </div>
+
+    <!-- Tarjetas ocultas -->
+    <div class="tarjeta oculta">
+      <img src="https://via.placeholder.com/" alt="Imagen 5" class="tarjeta-imagen">
+      <div class="tarjeta-contenido">
+        <h2 class="tarjeta-titulo">Título 5</h2>
+        <p class="tarjeta-descripcion">Descripción de la tarjeta 5.</p>
+        <a href="#" class="tarjeta-boton">Leer más</a>
+      </div>
+    </div>
+
+    <div class="tarjeta oculta">
+      <img src="https://via.placeholder.com/" alt="Imagen 6" class="tarjeta-imagen">
+      <div class="tarjeta-contenido">
+        <h2 class="tarjeta-titulo">Título 6</h2>
+        <p class="tarjeta-descripcion">Descripción de la tarjeta 6.</p>
+        <a href="#" class="tarjeta-boton">Leer más</a>
+      </div>
+    </div>
+
+    <div class="tarjeta oculta">
+      <img src="https://via.placeholder.com/" alt="Imagen 7" class="tarjeta-imagen">
+      <div class="tarjeta-contenido">
+        <h2 class="tarjeta-titulo">Título 7</h2>
+        <p class="tarjeta-descripcion">Descripción de la tarjeta 7.</p>
+        <a href="#" class="tarjeta-boton">Leer más</a>
+      </div>
+    </div>
+
+    <div class="tarjeta oculta">
+      <img src="https://via.placeholder.com/" alt="Imagen 8" class="tarjeta-imagen">
+      <div class="tarjeta-contenido">
+        <h2 class="tarjeta-titulo">Título 8</h2>
+        <p class="tarjeta-descripcion">Descripción de la tarjeta 8.</p>
+        <a href="#" class="tarjeta-boton">Leer más</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="ver-mas-container">
+    <button id="ver-mas-btn">Ver más</button>
+  </div>
+
+  <script>
+    document.getElementById("ver-mas-btn").addEventListener("click", function () {
+      const ocultas = document.querySelectorAll(".tarjeta.oculta");
+      ocultas.forEach(tarjeta => tarjeta.classList.remove("oculta"));
+      this.style.display = "none"; // Oculta el botón después de mostrar
+    });
+  </script>
+
+</body>
+</html>

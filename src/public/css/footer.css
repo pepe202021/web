@@ -1,0 +1,201 @@
+/* Reset básico para footer */
+.footer {
+    background-color: #222;
+    margin-top: 35px;
+    color: #eee;
+    padding: 40px 20px 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Contenedor del footer */
+.footer-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: space-between;
+}
+
+/* Columnas del footer */
+.footer-column {
+    flex: 1 1 280px;
+    min-width: 280px;
+}
+
+/* Logo del footer */
+.footer-logo img {
+    max-width: 150px;
+    margin-bottom: 15px;
+}
+
+/* Descripción del footer */
+.footer-description {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    color: #bbb;
+}
+
+/* Estilo para los enlaces sociales */
+.footer-social a {
+    color: #eee;
+    font-size: 1.5rem;
+    margin-right: 15px;
+    transition: color 0.3s ease, transform 0.3s ease;
+    text-decoration: none;
+}
+
+/* Hover y focus en enlaces sociales */
+.footer-social a:hover,
+.footer-social a:focus {
+    color: #e82736;
+    transform: scale(1.1); /* Efecto de aumento en hover */
+    outline: none;
+}
+
+/* Títulos de las columnas */
+.footer-column h5 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    color: #fff;
+    font-weight: 600;
+}
+
+/* Estilo de párrafos en el footer */
+.footer-column p {
+    font-size: 0.95rem;
+    margin: 8px 0;
+    display: flex;
+    align-items: center;
+    color: #ccc;
+}
+
+/* Iconos de los párrafos */
+.footer-column p i {
+    margin-right: 10px;
+    font-size: 1.2rem;
+    color: #e82736;
+}
+
+/* Estilos de botón de WhatsApp */
+/* Estilo mejorado para el botón */
+.btn3 {
+    width: 220px;
+    height: 60px;
+    margin-top: 55px;
+    padding: 12px 20px;
+    /* Mayor espacio alrededor del texto */
+    background-color: #25D366;
+    /* Color base del botón (verde de WhatsApp) */
+    color: rgb(0, 0, 0);
+    border: none;
+    text-align: center;
+    font-size: 1.5rem;
+    /* Aumento del tamaño de fuente */
+    border-radius: 50px;
+    /* Bordes más redondeados */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* Sombra suave para darle profundidad */
+    transition: all 0.3s ease-in-out;
+    /* Suavizado de todas las transiciones */
+}
+
+/* Efecto hover para el botón */
+.btn3:hover {
+    background-color: #128C7E;
+    /* Color más oscuro al pasar el ratón */
+    transform: translateY(-4px);
+    /* Mueve el botón ligeramente hacia arriba */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    /* Aumenta la sombra para efecto de flotado */
+}
+
+/* Efecto focus (cuando el botón está enfocado) */
+.btn3:focus {
+    outline: none;
+    /* Eliminar el borde de enfoque por defecto */
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.2);
+    /* Resaltar el botón con un borde de enfoque */
+}
+
+/* Efecto active (cuando el botón es presionado) */
+.btn3:active {
+    transform: translateY(2px);
+    /* Hacer que el botón se mueva ligeramente hacia abajo al presionarlo */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    /* Reducir la sombra */
+}
+
+.btn3:hover {
+    background-color: #128C7E;
+}
+
+/* Footer inferior */
+.footer-bottom {
+    text-align: center;
+    margin-top: 35px;
+    font-size: 0.85rem;
+    color: #666;
+    border-top: 1px solid #444;
+    padding-top: 15px;
+}
+
+/* Botón volver arriba */
+.back-to-top {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background-color: #e82736;
+    border: none;
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    z-index: 1000;
+}
+
+.back-to-top:hover,
+.back-to-top:focus {
+    background-color: #bf1e2a;
+    outline: none;
+    transform: scale(1.1); /* Aumento en hover */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-column {
+        
+        text-align: center;
+    }
+
+    .subscribe-form {
+        justify-content: center;
+    }
+
+    /* Mejorar la visibilidad en pantallas pequeñas */
+    .btn3 {
+        width: 80%;
+        font-size: 1.1rem;
+        margin-top: -125px;
+    }
+}

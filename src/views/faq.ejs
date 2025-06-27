@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>
+        <%= title %>
+    </title>
+    <%- include('partials/banner1') %>
+
+        <style>
+            main {
+                max-width: 900px;
+                margin: 50px auto;
+                background: white;
+                padding: 40px 30px;
+                border-radius: 10px;
+                box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            }
+
+            h1 {
+                text-align: center;
+                color: #4a90e2;
+                margin-bottom: 40px;
+                font-weight: 700;
+                font-size: 2.8rem;
+                letter-spacing: 1px;
+            }
+
+            /* FAQ Styles */
+            .faq-item {
+                border-bottom: 1px solid #ddd;
+                padding: 15px 0;
+            }
+
+            .faq-question {
+                font-size: 1.3rem;
+                font-weight: 600;
+                cursor: pointer;
+                position: relative;
+                padding-right: 25px;
+                color: #4a90e2;
+                user-select: none;
+                transition: color 0.3s ease;
+            }
+
+            .faq-question:hover {
+                color: #357ABD;
+            }
+
+            /* Arrow icon */
+            .faq-question::after {
+                content: '▼';
+                position: absolute;
+                right: 0;
+                top: 50%;
+                transform: translateY(-50%);
+                font-size: 1rem;
+                transition: transform 0.3s ease;
+                color: #4a90e2;
+            }
+
+            .faq-question.active::after {
+                transform: translateY(-50%) rotate(180deg);
+            }
+
+            .faq-answer {
+                max-height: 0;
+                overflow: hidden;
+                font-size: 1.1rem;
+                color: #555;
+                transition: max-height 0.4s ease, padding 0.3s ease;
+                padding-left: 10px;
+            }
+
+            .faq-answer.open {
+                max-height: 500px;
+                /* Suficiente para contenido */
+                padding-top: 10px;
+            }
+
+            /* Responsive */
+            @media (max-width: 600px) {
+                main {
+                    padding: 25px 20px;
+                    margin: 30px auto;
+                }
+
+                h1 {
+                    font-size: 2.2rem;
+                }
+
+                .faq-question {
+                    font-size: 1.1rem;
+                }
+
+                .faq-answer {
+                    font-size: 1rem;
+                }
+            }
+        </style>
+</head>
+
+<body>
+    <main>
+        <h1>Preguntas Frecuentes</h1>
+
+        <div class="faq-item">
+            <div class="faq-question">¿Qué es Coffee Laberinto?</div>
+            <div class="faq-answer">
+                Coffee Laberinto es un centro comercial digital que ofrece una experiencia de compra innovadora y
+                accesible para todos los usuarios.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">¿Cómo puedo registrarme en un plan?</div>
+            <div class="faq-answer">
+                Puedes registrarte seleccionando el plan que prefieras y comunicarte atravez de nuestro whatsapp
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">¿Qué métodos de pago aceptan?</div>
+            <div class="faq-answer">
+                Aceptamos pagos mediante tarjeta de crédito, débito, y transferencias bancarias.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">¿Puedo cambiar de plan después de registrarme?</div>
+            <div class="faq-answer">
+                Sí, puedes solicitar un cambio de plan contactando a nuestro equipo de soporte.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">¿Cómo me contacto con soporte?</div>
+            <div class="faq-answer">
+                Puedes contactarnos vía correo electrónico ,através de nuestras redes sociales o por nuestro whatsapp. 
+            </div>
+        </div>
+    </main>
+
+    <%- include('partials/footer') %>
+
+        <script>
+            // Script para el efecto acordeón
+            document.querySelectorAll('.faq-question').forEach(question => {
+                question.addEventListener('click', () => {
+                    const openAnswer = question.nextElementSibling;
+                    const isOpen = openAnswer.classList.contains('open');
+
+                    // Cerrar todas las respuestas
+                    document.querySelectorAll('.faq-answer.open').forEach(ans => {
+                        ans.classList.remove('open');
+                        ans.previousElementSibling.classList.remove('active');
+                    });
+
+                    // Abrir la que se clickeó (si estaba cerrada)
+                    if (!isOpen) {
+                        openAnswer.classList.add('open');
+                        question.classList.add('active');
+                    }
+                });
+            });
+        </script>
+</body>
+
+</html>

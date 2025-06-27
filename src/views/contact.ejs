@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>
+        <%= title %>
+    </title>
+    <%- include('partials/banner1') %>
+
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+        <style>
+            /* Estilo Global */
+            body {
+                font-family: 'Roboto', sans-serif;
+                background-color: #f4f6f9;
+                margin: 0;
+                padding: 0;
+            }
+
+            main {
+                max-width: 800px;
+                margin: 50px auto;
+                background: white;
+                padding: 50px 40px;
+                border-radius: 10px;
+                box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+                font-size: 1rem;
+            }
+
+            h1 {
+                text-align: center;
+                color: #4a90e2;
+                margin-bottom: 40px;
+                font-weight: 700;
+                font-size: 2.6rem;
+                letter-spacing: 1px;
+            }
+
+            form {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            label {
+                font-weight: 600;
+                font-size: 1.1rem;
+                margin-bottom: 5px;
+                color: #444;
+            }
+
+            input[type="text"],
+            input[type="email"],
+            input[type="tel"],
+            textarea {
+                padding: 12px 15px;
+                border: 1px solid #ccc;
+                border-radius: 8px;
+                font-size: 1rem;
+                resize: vertical;
+                transition: all 0.3s ease;
+                font-family: inherit;
+            }
+
+            input[type="text"]:focus,
+            input[type="email"]:focus,
+            input[type="tel"]:focus,
+            textarea:focus {
+                outline: none;
+                border-color: #4a90e2;
+                box-shadow: 0 0 8px rgba(74, 144, 226, 0.3);
+            }
+
+            textarea {
+                min-height: 120px;
+            }
+
+            button {
+                background-color: #4a90e2;
+                color: white;
+                font-weight: 700;
+                padding: 14px;
+                border: none;
+                border-radius: 8px;
+                font-size: 1.1rem;
+                cursor: pointer;
+                transition: background-color 0.3s ease, transform 0.2s ease;
+                text-transform: uppercase;
+                margin-top: 20px;
+            }
+
+            button:hover {
+                background-color: #357ABD;
+                transform: translateY(-2px);
+            }
+
+            /* Responsive */
+            @media (max-width: 600px) {
+                main {
+                    padding: 30px 20px;
+                    margin: 30px auto;
+                }
+
+                h1 {
+                    font-size: 2.2rem;
+                }
+
+                label {
+                    font-size: 1rem;
+                }
+
+                input[type="text"],
+                input[type="email"],
+                input[type="tel"],
+                textarea {
+                    font-size: 0.95rem;
+                }
+
+                button {
+                    font-size: 1rem;
+                    padding: 12px;
+                }
+            }
+        </style>
+</head>
+
+<body>
+    <main>
+        <h1>Contacto</h1>
+
+        <form id="formCorreo" style="display: flex; flex-direction: column; gap: 10px;">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" required>
+
+            <label for="correo">Correo electrónico:</label>
+            <input type="email" id="correo" required>
+
+            <label for="telefono">Teléfono:</label>
+            <input type="tel" id="telefono">
+
+            <label for="descripcion">Descripción:</label>
+            <textarea id="descripcion" required></textarea>
+
+            <button type="submit">Enviar</button>
+        </form>
+
+        <script>
+            document.getElementById('formCorreo').addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                const nombre = document.getElementById('nombre').value;
+                const correo = document.getElementById('correo').value;
+                const telefono = document.getElementById('telefono').value;
+                const descripcion = document.getElementById('descripcion').value;
+
+                const correoDestino = "coffeelaberinto@gmail.com";
+
+                if (!correoDestino || correoDestino === "") {
+                    alert("Error: No se pudo obtener la dirección de correo de destino. Por favor, inténtelo de nuevo más tarde.");
+                    console.error("Correo de destino no definido. Verifique su plantilla y los datos.");
+                    return;
+                }
+
+                const asunto = `Contacto de ${nombre}`;
+                const cuerpo = `Datos de Contacto:
+        ---------------------
+Nombre: ${nombre}
+Correo: ${correo}
+Teléfono: ${telefono || 'No proporcionado'}
+Mensaje: ${descripcion}
+                                            `;
+
+                const mailtoLink = `mailto:${correoDestino}?subject=${encodeURIComponent(asunto)}&body=${encodeURIComponent(cuerpo)}`;
+
+                window.location.href = mailtoLink;
+            });
+        </script>
+    </main>
+
+    <%- include('partials/footer') %>
+</body>
+
+</html>

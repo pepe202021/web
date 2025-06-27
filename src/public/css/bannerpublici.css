@@ -1,0 +1,52 @@
+/* Carrusel principal: ancho completo y altura controlada */
+#miCarruselPublicitario {
+  margin-top: 30px;
+  margin-bottom: 50px;
+  width: 100%;
+  max-height: 500px;
+  overflow: hidden;
+  position: relative;
+  background-color: #000;
+  /* Fondo de respaldo si la imagen tarda en cargar */
+}
+
+/* Ajuste de imágenes: se adaptan al contenedor y recortan de forma elegante */
+#miCarruselPublicitario .carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* Captions: fondo translúcido con buen contraste */
+.carousel-caption {
+  background-color: rgba(0, 0, 0, 0.5);
+  /* Más opacidad para mejor legibilidad */
+  padding: 1rem 1.5rem;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  color: #fff;
+}
+
+/* Ocultar captions automáticamente en móviles si es necesario */
+@media (max-width: 768px) {
+  #miCarruselPublicitario {
+    max-height: 300px;
+  }
+
+  .carousel-caption {
+    font-size: 0.85rem;
+    padding: 0.5rem 1rem;
+    display: none;
+    /* Puedes eliminar esta línea si deseas mantener los captions en móviles */
+  }
+}
+
+/* Flechas de control: visibles sobre fondos claros y oscuros */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  filter: invert(100%) brightness(200%);
+  width: 2rem;
+  height: 2rem;
+}

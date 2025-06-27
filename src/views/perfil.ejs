@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/css/perfilunico.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+
+<body>
+
+    <!-- Menú o banner -->
+    <%- include('partials/banner1') %>
+
+        <% if (data && data.length> 0) { %>
+            <div class="profile-page">
+
+                <div class="client-banner-container">
+                    <img class="client-banner" src="<%= data.at(0).at(7) %>" alt="Imagen de <%= data.at(0).at(7) %>" />
+                </div>
+
+                <div class="profile-container">
+                    <div class="profile-image-wrapper" style="background-image: url('<%= data.at(0).at(5) %>');"></div>
+
+                    <div class="profile-details">
+                        <h1 class="marca">
+                            <%= data.at(0).at(1) %>
+                        </h1>
+
+                        <p class="categoria-linea">
+                            <i class="fas fa-phone"></i>
+                            <strong class="title">Teléfono:</strong>
+                            <span class="text">
+                                <%= data.at(0).at(2) %>
+                            </span>
+                        </p> <br>
+
+                        <p class="categoria-linea">
+                            <i class="fas fa-info-circle"></i>
+                            <strong class="title">Información:</strong>
+                            <span class="text">
+                                <%= data.at(0).at(4) %>
+                            </span>
+                        </p><br>
+
+                        <p class="categoria-linea">
+                            <i class="fas fa-tag"></i>
+                            <strong class="title">Categoría:</strong>
+                            <span class="text">
+                                <%= data.at(0).at(6) %>
+                            </span>
+                        </p><br><br>
+
+                        <h2>ubicación: </h2>
+                        <div class="dire">
+                            <iframe class="map-frame" src="<%= data[0][8] %>" allowfullscreen="" loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+
+                    </div>
+                </div>
+                <h2 style="text-align: center;">Siguenos en nuestras redes sociales</h2>
+                <div class="profile-container1">
+                    <div class="social-buttons">
+                        <a href="https://wa.me/57<%= data.at(0).at(2) %>?text=Hola%20vi%20tu%20perfil%20en%20mi%20sitio"
+                            target="_blank" class="social-btn whatsapp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="<%= data[0][10] %>" target="_blank" class="social-btn instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="<%= data[0][11] %>" target="_blank" class="social-btn facebook">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+
+                        <a href="<%= data[0][12] %>" target="_blank" class="social-btn tiktok">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="profile-container">
+                    <h2>Contáctanos</h2>
+                    <form id="formCorreo" style="display: flex; flex-direction: column; gap: 10px;">
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" id="nombre" required>
+
+                        <label for="correo">Correo electrónico:</label>
+                        <input type="email" id="correo" required>
+
+                        <label for="telefono">Teléfono:</label>
+                        <input type="tel" id="telefono">
+
+                        <label for="descripcion">Descripción:</label>
+                        <textarea id="descripcion" required></textarea>
+
+                        <button type="submit">Enviar</button>
+                    </form>
+
+                    <script>
+                        document.getElementById('formCorreo').addEventListener('submit', function (e) {
+                            e.preventDefault();
+
+                            const nombre = document.getElementById('nombre').value;
+                            const correo = document.getElementById('correo').value;
+                            const telefono = document.getElementById('telefono').value;
+                            const descripcion = document.getElementById('descripcion').value;
+
+                            // This line is where your server-side template engine inserts the value
+                            const correoDestino = "<%= data[0][9] %>";
+
+                            // Basic validation for correoDestino
+                            if (!correoDestino || correoDestino === "") {
+                                alert("Error: No se pudo obtener la dirección de correo de destino. Por favor, inténtelo de nuevo más tarde.");
+                                console.error("Correo de destino no definido. Verifique su plantilla y los datos.");
+                                return; // Stop execution if no recipient email
+                            }
+
+                            const asunto = `Contacto de ${nombre}`;
+                            // Added sender's email and phone to the body for better context
+                            const cuerpo = `Datos de Contacto:
+---------------------
+Nombre: ${nombre}
+Correo: ${correo}
+Teléfono: ${telefono || 'No proporcionado'}
+Mensaje: ${descripcion}
+                                            `;
+
+                            const mailtoLink = `mailto:${correoDestino}?subject=${encodeURIComponent(asunto)}&body=${encodeURIComponent(cuerpo)}`;
+
+                            window.location.href = mailtoLink;
+                        });
+                    </script>
+                </div>
+
+            </div>
+            <% } else { %>
+                <div class="no-profile-container">
+                    <p class="no-profile">No se encontró el perfil.</p>
+                </div>
+                <% } %>
+
+                <%- include('partials/footer') %>
+
+</body>
+
+</html>

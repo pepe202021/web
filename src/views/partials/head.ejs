@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/mainh.css">
+</head>
+
+<body>
+
+    <!-- 🔍 Buscador -->
+    <form class="search-form" method="GET" action="/head">
+        <select name="categoria" class="search-select">
+            <option value="">Ver opciones</option>
+            <option value="Salud">Salud y Belleza</option>
+            <option value="Vehiculos">Vehículos</option>
+            <option value="agro">Agro</option>
+            <option value="Gastronomia">Gastronomía</option>
+            <option value="Turismo">Turismo</option>
+            <option value="Ropa">Ropa y Calzado</option>
+            <option value="Profesionales">Profesionales</option>
+            <option value="inmobiliaria">Inmobiliaria</option>
+            <option value="Mascotas">Mascotas</option>
+        </select>
+        <button type="submit">Buscar</button>
+    </form>
+
+    <div class="category-buttons">
+        <button data-categoria="Salud">💄</button>
+        <button data-categoria="Vehiculos">🚗</button>
+        <button data-categoria="agro">🌾</button>
+        <button data-categoria="Gastronomia">🍽️</button>
+        <button data-categoria="Turismo">✈️</button>
+        <button data-categoria="Ropa">👟</button>
+        <button data-categoria="Profesionales">👨‍💼</button>
+        <button data-categoria="inmobiliaria">🏠</button>
+        <button data-categoria="Mascotas">🐶</button>
+    </div>
+    
+
+    <script>
+        const buttons = document.querySelectorAll('.category-buttons button');
+
+        buttons.forEach(button => {
+            button.addEventListener('click', () => {
+                const categoria = button.getAttribute('data-categoria');
+                if (categoria) {
+                    // Redirecciona a /head?categoria=valor
+                    window.location.href = `/head?categoria=${encodeURIComponent(categoria)}`;
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>
